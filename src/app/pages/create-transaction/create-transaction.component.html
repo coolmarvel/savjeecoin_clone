@@ -1,0 +1,35 @@
+<div class="container">
+	<h1>트랜잭션 생성</h1>
+	<p>다른 사람한테 돈을 좀 송금해!</p>
+
+	<br>
+
+	<div class="form-group">
+		<label for="fromAddress">From address</label>
+		<input type="text" class="form-control" id="fromAddress" aria-describedby="fromAddressHelp"
+			[(ngModel)]="ownWalletKey.publicKey" disabled>
+		<small id="fromAddressHelp" class="form-text text-muted">
+			이것은 당신의 지갑 주소입니다. 본인 코인만 사용하실 수 있어서 변경이 불가능합니다.
+		</small>
+	</div>
+
+	<div class="form-group">
+		<label for="toAddress">To address</label>
+		<input type="text" class="form-control" id="toAddress" aria-describedby="toAddressHelp"
+			[(ngModel)]="newTx.toAddress">
+		<small id="toAddressHelp" class="form-text text-muted">
+			여기에 당신이 돈을 보내고 싶은 지갑의 주소뿐만 아니라 아무값 다 입력가능.
+		</small>
+	</div>
+
+	<div class="form-group">
+		<label for="amount">Amount</label>
+		<input type="number" class="form-control" id="amount" aria-describedby="amountHelp" [(ngModel)]="newTx.amount">
+		<small id="amountHelp" class="form-text text-muted">
+			MIMI에서는 전송할 수 있는 금액은 무제한!
+		</small>
+	</div>
+
+	<button (click)="createTransaction()" type="submit" class="btn btn-primary">확인 & 트랜잭션 생성</button>
+
+</div>

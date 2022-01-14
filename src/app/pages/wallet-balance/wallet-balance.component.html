@@ -1,0 +1,20 @@
+<div class="container">
+	<h1>지갑</h1>
+
+	<p style="word-wrap:break-word;">
+		<strong>주소:</strong>
+		<br>
+		{{walletAddress}}
+	</p>
+
+	<p>
+		<strong>잔고:</strong>
+		{{ balance }}
+	</p>
+
+	<hr>
+
+	<h1>트랜잭션</h1>
+	<p *ngIf="transactions.length === 0">이 지갑은 거래된 트랜잭션이 없습니다.</p>
+	<app-transactions-table [transactions]="transactions" *ngIf="transactions.length > 0"></app-transactions-table>
+</div>

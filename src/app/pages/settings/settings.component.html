@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>설정</h1>
+  <p>새로운 트랜잭션이나 블록이 생성될 때 어떻게 동작하는지 제어해 볼 수 있다.</p>
+
+  <br>
+
+  <div class="form-group">
+    <label for="difficulty">Difficulty</label>
+    <input type="number" class="form-control" id="difficulty" aria-describedby="difficultyHelp"
+      [(ngModel)]="blockchain.difficulty">
+    <small id="difficultyHelp" class="form-text text-muted">
+      난이도를 높일수록 채굴 속도가 현저히 느려집니다.
+      <br>Default: 1 (MAX:64)
+    </small>
+  </div>
+
+  <br>
+
+  <div class="form-group">
+    <label for="miningReward">채굴 보상</label>
+    <input type="number" class="form-control" id="miningReward" aria-describedby="miningRewardHelp"
+      [(ngModel)]="blockchain.miningReward">
+    <small id="miningRewardHelp" class="form-text text-muted">
+      새 블록체인을 성공적으로 만들면 채굴자가 받는 미미코인.
+      <br>Default: 100
+    </small>
+  </div>
+
+</div>
